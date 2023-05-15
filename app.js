@@ -1,6 +1,21 @@
 let listUsers = []
 let listPasswords = []
 
+function showLogin() {
+    login.style.display = "flex"
+    container.style.display = "none"
+    signup.style.display = "none"
+}
+function showSignup() {
+    login.style.display = "none"
+    container.style.display = "none"
+    signup.style.display = "flex"
+}
+function showcontainer() {
+    login.style.display = "none"
+    container.style.display = "block"
+    signup.style.display = "none"
+}
 function signup(){
     let si_username = document.querySelector(".si_username").value;
     let si_password = document.querySelector(".si_password").value;
@@ -10,10 +25,9 @@ function signup(){
 
     localStorage.setItem("listUsers", JSON.stringify(listUsers))
     localStorage.setItem("listPasswords", JSON.stringify(listPasswords))
+    window.open('2.html');
 
-
-    // console.log(typeof JSON.parse(localStorage.getItem("listUsers")));
-    // console.log(typeof JSON.parse(localStorage.getItem("listPasswords")));
+ 
 }
 
 function login(){
@@ -28,7 +42,8 @@ function login(){
             //kiểm tra tiếp xem pasword cho trùng k
             if(li_password === arrPassword[i]){
                 // dang nhap
-                alert("Login sucessfuly!")
+                // alert("Login sucessfuly!")
+                window.open('index.html');
                 break;
             }else{
                 //bao sai mat khau
@@ -41,5 +56,5 @@ function login(){
             }
         }
     }
-
+   
 }
